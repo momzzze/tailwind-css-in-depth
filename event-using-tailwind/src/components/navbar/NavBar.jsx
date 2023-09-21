@@ -13,15 +13,15 @@ const NavBar = () => {
     }
 
     return (
-        <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
+        <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500 z-50">
             <NavBarLogo logo={logoInverted} />
             <NavMobileMenu toggleMobileMenu={toggleMobileMenu} isOpen={isMobileMenuOpen} />
             
             <div className='md:flex flex-1  hidden items-center justify-end'>
-                <NavBarMenuItem label={'Home'} subMenu={false} />
-                <NavBarMenuItem label={'Lineup'} subMenu={false} />
-                <NavBarMenuItem label={'Thickets'} subMenu={true} />
-                <NavBarMenuItem label={'Support'} subMenu={false} />
+                <NavBarMenuItem label={'Home'} subMenu={false} scrollToId="home"/>
+                <NavBarMenuItem label={'Lineup'} subMenu={false} scrollToId="lineup"/>
+                <NavBarMenuItem label={'Thickets'} subMenu={true} scrollToId="tickets"/>
+                <NavBarMenuItem label={'Headliners'} subMenu={false} scrollToId="headliners"/>
             </div>
         </nav>
     )

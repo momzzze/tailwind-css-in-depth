@@ -1,7 +1,15 @@
 
-const NavBarMenuItem = ({ label, subMenu }) => {
+const NavBarMenuItem = ({ label, subMenu, scrollToId }) => {
+    const handleMenuItemClick = () => {
+        const targetElement = document.getElementById(scrollToId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
-        <div className={`menu-item ${subMenu ? 'group' : ''}`}>
+        <div className={`menu-item ${subMenu ? 'group' : ''}`}
+            onClick={handleMenuItemClick}
+        >
             <span>{label}</span>
             {subMenu && (
                 <div className="group-hover:block dropdown-menu-items">
