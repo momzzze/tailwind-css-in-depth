@@ -1,0 +1,31 @@
+class="text-lg text-center font-bold text-blue-400"
+
+
+abbreviations: m for margin p for padding text for text-related thinks bg for backgorund
+
+modifiers: sm lg 2xl... hover
+
+property:
+	m-2 for margin 
+	py-4 padding top and bottom 
+	px left right 
+	text-center center aligned text
+	
+dynamic states:
+		you can use group to apply styles to child elements
+
+responsive design:
+	sm:  640px(min-width:640px)
+	md:  768px(min-width:768px)
+	lg:  1024px    _||_
+	xl:	 1280px    _||_
+	2xl: 1536px    _||_
+	
+	if you prefix the utility that's means it will be applied to "only at or above this"
+	example: if is added md:text-green that's means on 768px or above will be green color
+	
+JIT COMPILER:
+	Speeds up the build process
+	Support custom styles
+	Keeps the CSS consistent in both development and production
+	Improves how websites perform in the browsers

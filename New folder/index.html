@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3.0.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+       <style>
+        @layer components {
+            .card {
+                @apply m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-black;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        chestnut: '#973f29',
+                    }
+                }
+            }
+        }
+    </script>
+   
+</head>
+
+<body>
+    <h1 class="text-lg text-center font-bold text-blue-400">
+        Hello world!
+    </h1>
+
+    <div class="w-full h-10 bg-purple-200 rounded-md border-t border-violet-600 my-4 py-2">
+        <p class="text-center font-mono font-extrabold text-[13px]">A div</p>
+    </div>
+
+    <!-- layout -->
+    <div class="fixed w-10 h-10 bg-red-500 top-0">
+
+    </div>
+    <div class="flex justify-center space-x-10">
+        <div class="h-16 w-16 rounded-full bg-blue-500">
+        </div>
+        <div class="h-16 w-16 rounded-full bg-orange-500">
+        </div>
+        <div class="h-16 w-16 rounded-full bg-purple-500">
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-5">
+        <div class="bg-violet-500 h-12"></div>
+        <div class="bg-violet-500 h-12"></div>
+        <div class="bg-violet-500 h-12"></div>
+        <div class="bg-violet-500 h-12"></div>
+        <div class="bg-violet-500 h-12"></div>
+        <div class="bg-violet-500 h-12"></div>
+    </div>
+
+    <!-- media -->
+    <div class="md:block hidden">
+        <p>I will appear for device resolution > 768px</p>
+    </div>
+    <div class="max-md:block hidden">
+        <p>I will appear for device resolution < 768px</p>
+    </div>
+    <button
+        class="my-2 rounded-lg px-4 py-2 text-white bg-purple-300 hover:bg-purple-500 focus:outline-none focus:ring focus:ring-purple-700 active:bg-purple-800">
+        Click Me
+    </button>
+
+    <ul class="my-2 space-y-2">
+        <li class="bg-white p2 first:bg-yellow-100">Item 1</li>
+        <li class="bg-white p2 odd:bg-green-200 even:bg-blue-200">Item 2</li>
+        <li class="bg-white p2 odd:bg-green-200 even:bg-blue-200">Item 3</li>
+        <li class="bg-white p2 odd:bg-green-200 even:bg-blue-200">Item 4</li>
+        <li class="bg-white p2 odd:bg-green-200 even:bg-blue-200">Item 5</li>
+    </ul>
+
+    <!-- theme dark: -->
+    <div class="card">
+        <h3 class="text-base font-medium tracking-light text-slate-900 dark:text-white">Lorem ipsum dolor</h3>
+        <p class="mt-2 text-small text-slate-500 mb-2 dark:text-slate-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            qui alias eaque veniam beatae dolorum, quae accusamus voluptatibus reprehenderit doloribus?</p>
+        <button id="toggleDark"
+            class="text-purple-900 text-sm font-medium bg-purple-300 px-4 py-2 rounded-md hover:bg-purple-200 "
+            onclick="document.body.classList.toggle('dark')">Toggle dark mode</button>            
+    </div>
+    <p class="text-[24px] text-chestnut bg-stone-100 p-[16px] text-center">Chestnut Color</p>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleDark = document.getElementById('toggleDark');
+            toggleDark.addEventListener('click', function() {
+                if(document.documentElement.classList.includes('dark')) {
+                    document.documentElement.classList.remove('dark');                
+                } else {
+                    document.documentElement.classList.add('dark');
+                }
+                alert('click!');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
